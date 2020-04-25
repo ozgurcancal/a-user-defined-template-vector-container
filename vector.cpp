@@ -309,10 +309,11 @@ void Vector::pop_back() {
 }
 
 void Vector::swap(Vector& Obj) {  
-    unsigned i = 0, temp;
-    auto size = mysize > Obj.mysize ? mysize : Obj.mysize;
+    unsigned i,temp;
+    i = temp = 0;  
+    auto size=mysize > Obj.mysize ? mysize : Obj.mysize;   //choose bigger size
 
-    while (i < size)
+    while (i<size)  //swap the elements
     {
         temp = arr[i];
         arr[i] = Obj.arr[i];
@@ -320,7 +321,7 @@ void Vector::swap(Vector& Obj) {
         i++;
     }
 
-    temp = mysize;
+    temp = mysize;   //swap the sizes
     mysize = Obj.mysize;
     Obj.mysize = temp;
 }
