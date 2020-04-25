@@ -7,16 +7,12 @@
 #include <time.h>
 #include <conio.h>
 
-Vector::Vector() noexcept :arr{ new int[0] }, mysize{ 0 }, mycap{ 0 }{
-
-
-}
+Vector::Vector() noexcept :arr{ new int[0] }, mysize{ 0 }, mycap{ 0 }{}
 
 Vector::~Vector() {
 
     delete[] arr;   
-    arr = nullptr;    
-   
+    arr = nullptr;     
 }
 
 Vector::Vector(size_t size, int val) {  
@@ -48,7 +44,6 @@ void Vector::copy_Vector(const Vector& Obj) {
 Vector::Vector(const Vector& Obj) {
 
     copy_Vector(Obj);
-
 }
 
 Vector::Vector(Vector&& Obj)noexcept { 
@@ -56,8 +51,6 @@ Vector::Vector(Vector&& Obj)noexcept {
     copy_Vector(Obj);
     delete[] Obj.arr;
     Obj.arr = nullptr;
-  
-
 }
 
 Vector& Vector::operator=(const Vector& Obj) {
@@ -96,7 +89,6 @@ void Vector::initialize_in_range(T x, T y) {
         mycap = 10;
         arr = new int[mycap];
     }
-
 
     auto vbegin = const_cast<int*>(x);
     auto vend = const_cast<int*>(y);
