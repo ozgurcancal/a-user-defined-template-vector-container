@@ -6,6 +6,8 @@
 class Vector {
 private:
 	void copy_ilist(std::initializer_list<int> ilist);   //std::initializer listi kopyalar
+	template <class T>
+	void inline template_swap(T& x, T& y);
 public:
 
 	int* arr = nullptr;
@@ -16,8 +18,6 @@ public:
 	class iterator;//1. İçsel(nested) iterator türü.Kaptaki öğelerin konumlarını tutan iterator nesnelerinin türü.Okuma ve yazma erişimi sağlar.
 
 	class const_iterator;//2. İçsel(nested) const_iterator türü.Kaptaki öğelerin konumlarını tutan const_iterator nesnelerinin türü.Yalnızca okuma amaçlı erişim sağlar.
-
-
 
 	Vector()noexcept;//3. Varsayılan kurucu işlev(default constructor).Boş bir Vector nesnesi oluşturur.
 //
