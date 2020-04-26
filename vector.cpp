@@ -9,7 +9,7 @@
 
 Vector::Vector() noexcept :arr{ new int[0] }, mysize{ 0 }, mycap{ 0 }{}
 
-Vector::~Vector() {
+Vector::~Vector()noexcept {
 
     delete[] arr;   
     arr = nullptr;     
