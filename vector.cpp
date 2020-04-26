@@ -300,22 +300,27 @@ void Vector::pop_back() {
     mysize--;
 }
 
-void Vector::swap(Vector& Obj) {  
-    unsigned i,temp;
-    i = temp = 0;  
+template <class T>
+void inline Vector::template_swap(T &x, T &y) {
+
+    T temp(x);
+    x = y;
+    y = temp;
+}
+
+void Vector::swap(Vector& Obj) {  //normalde adres takası yapsan daha iyi ama iki farklı obje oldugu icin yapma.
+    int* temp=nullptr; int i = 0;
+    
     auto size=mysize > Obj.mysize ? mysize : Obj.mysize;   //choose bigger size
 
     while (i<size)  //swap the elements
     {
-        temp = arr[i];
-        arr[i] = Obj.arr[i];
-        Obj.arr[i] = temp;
+        template_swap(arr, Obj.arr);
         i++;
     }
 
-    temp = mysize;   //swap the sizes
-    mysize = Obj.mysize;
-    Obj.mysize = temp;
+    template_swap(mysize, Obj.mysize);   //swap the sizes
+    
 }
 
 void Vector::clear() {
