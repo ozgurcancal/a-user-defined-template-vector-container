@@ -21,7 +21,7 @@ public:
 
 	Vector()noexcept;//3. Varsayılan kurucu işlev(default constructor).Boş bir Vector nesnesi oluşturur.
 //
-	~Vector();//4. Sonlandırıcı işlev(destructor).
+	~Vector()noexcept;//4. Sonlandırıcı işlev(destructor).
 //
 	void copy_Vector(const Vector& Obj);
 
