@@ -6,8 +6,7 @@
 class Vector {
 private:
 	void copy_ilist(std::initializer_list<int> ilist);   //std::initializer listi kopyalar
-	template <class T>
-	void inline template_swap(T& x, T& y);
+
 public:
 
 	int* arr = nullptr;
