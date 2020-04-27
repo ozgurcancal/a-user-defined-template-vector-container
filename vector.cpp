@@ -35,8 +35,6 @@ void Vector::copy_Vector(const Vector& Obj) {
         mycap = Obj.mysize;
 
         std::copy(Obj.arr, Obj.arr + Obj.mysize, arr);
-        // 
-         //
     }
 
 }
@@ -300,27 +298,18 @@ void Vector::pop_back() {
     mysize--;
 }
 
-template <class T>
-void inline Vector::template_swap(T &x, T &y) {
-
-    T temp(x);
-    x = y;
-    y = temp;
-}
-
-void Vector::swap(Vector& Obj) {  //normalde adres takası yapsan daha iyi ama iki farklı obje oldugu icin yapma.
-    int* temp=nullptr; int i = 0;
+void Vector::swap(Vector& Obj) { 
     
+    int* temp=nullptr; int i = 0;    
     auto size=mysize > Obj.mysize ? mysize : Obj.mysize;   //choose bigger size
 
     while (i<size)  //swap the elements
     {
-        template_swap(arr, Obj.arr);
+        std::swap(arr, Obj.arr);
         i++;
     }
 
-    template_swap(mysize, Obj.mysize);   //swap the sizes
-    
+    std::swap(mysize, Obj.mysize);   //swap the sizes  
 }
 
 void Vector::clear() {
