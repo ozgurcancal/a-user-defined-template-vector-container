@@ -13,18 +13,13 @@ public:
 	size_t mysize = 0;
 	size_t mycap = 0;
 
-
 	class iterator;//1. İçsel(nested) iterator türü.Kaptaki öğelerin konumlarını tutan iterator nesnelerinin türü.Okuma ve yazma erişimi sağlar.
-	friend class iterator;
 	class const_iterator;//2. İçsel(nested) const_iterator türü.Kaptaki öğelerin konumlarını tutan const_iterator nesnelerinin türü.Yalnızca okuma amaçlı erişim sağlar.
-
-
 
 	Vector()noexcept;//3. Varsayılan kurucu işlev(default constructor).Boş bir Vector nesnesi oluşturur.
 //
 	~Vector()noexcept;//4. Sonlandırıcı işlev(destructor).
 //
-	//template <typename T>
 	void copy_container(const T& Obj);
 
 	Vector(const Vector& Obj);///5. Kopyalayan kurucu işlev. (copy constructor)
